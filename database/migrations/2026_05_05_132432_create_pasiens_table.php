@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('pasiens', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-        });
+        $table->string('no_rekam_medis')->unique(); // Contoh: RM-001
+        $table->string('nama_pasien');
+        $table->string('jenis_kelamin');             // Contoh: Laki-laki, Perempuan
+        $table->integer('umur');
+        $table->timestamps();                        // created_at & updated_at otomatis
+    });
     }
 
     /**
